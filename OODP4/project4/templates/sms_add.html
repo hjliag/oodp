@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}add sms{% endblock %}
+
+{% block body %}
+<html>
+    <body>
+        <form action="" method="POST" onsubmit="return validateContact(this);">
+
+            <!-- hidden attribute to save id -->
+            <p hidden>Id : <input type="text" name="id" /></p>
+
+            <!-- input field -->
+            <p>Number : <input type="text" name="number" /></p>
+            <p>Message : <input type="text" name="message" /></p>
+
+            <!-- button to send sms -->
+            <p><input type="submit" value="send" /></p>
+        </form>
+            <p><button onclick="history.back()">back</button></p>
+    </body>
+</html>
+{% endblock %}

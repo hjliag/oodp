@@ -1,0 +1,38 @@
+.frame {
+    width: 400px;
+    height: 600px;
+    margin: 0px auto;
+    border: 2px solid #eee;
+}
+.menu-bar {
+    position: absolute;
+    top: 570px;
+    width: 400px;
+    display: table;
+    margin: 0px auto;
+}
+ul.menu {
+    border-top: 1px solid #eee;
+    padding: 0px;
+    padding-top: 5px;
+    margin: 0 auto;
+    list-style-type: none;
+    text-align: center; /* to center horizontally child inline elements */
+}
+
+ul.menu li:last-child {
+    border-right: none
+}
+ul.menu li {
+    width: 85px;
+    display: inline-block;
+    border-right: 2px solid #bbb;
+}
+
+ul.menu a {
+    text-decoration: none
+}
+
+.content {
+    margin: 20px;
+}

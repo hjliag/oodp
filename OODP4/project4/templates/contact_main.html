@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block title %}contact main{% endblock %}
+{% block body %}
+
+    <h2>Contacts</h2>
+
+    <button onclick="location.href='/contact/add'">Add</button>
+
+    <!-- Search engine -->
+    <div class="input-group">
+        <input type="text" id="search_contact" class="form-control"/>
+        <span class="input-group-addon">
+            <i class="fa fa-search"></i>
+        </span>
+    </div>
+
+    <!-- list of contacts -->
+    <ul id="contact_list" class="col-md-6 col-md-offset-3">
+        {% for contact in contacts %}
+            <li class="contact" data="{{contact.name}}">
+                <!-- click to edit -->
+                <a href="/contact/edit?id={{contact.id}}" >
+                    {{contact.name}}
+                </a>
+                <button onclick="location.href='/contact/delete?id={{contact.id}}'">Delete</button>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

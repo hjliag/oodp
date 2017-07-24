@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}sms main{% endblock %}
+{% block body %}
+    <h2>SMS</h2>
+
+	<button onclick="location.href='/sms/add'">Send</button>
+
+	<!-- Search engine -->
+    <div class="input-group">
+        <input type="text" id="search_sms" class="form-control"/>
+        <span class="input-group-addon">
+            <i class="fa fa-search"></i>
+        </span>
+    </div>
+
+	<!-- sms list -->
+    <ul class="col-md-6 col-md-offset-3">
+        {% for sms in smss %}
+			<li class="sms">
+				number : {{sms.number}}<br>
+				message : {{sms.message}}<br>
+				send time : {{sms.send_time}}<br>
+				sent : {{sms.sent}}<br>
+				<button onclick="location.href='/sms/delete?id={{sms.id}}'">Delete</button>
+			</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

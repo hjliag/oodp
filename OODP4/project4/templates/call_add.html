@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block title %}add call{% endblock %}
+
+{% block body %}
+<script text="text/javascript">
+    // start call - record time for the start
+    function start_call(){
+        // get number calling
+        var call_number = document.getElementById("call_number").value;
+        var start = new Date();
+        document.getElementById("start").value = start.yyyymmdd();
+    }
+    // end call - record time for the end
+    function end_call(){
+        var end = new Date();
+        document.getElementById("end").value = end.yyyymmdd();
+        return true;
+    }
+
+    // function to formatting Date to String
+    Date.prototype.yyyymmdd = function() {
+    var mm = this.getMonth() + 1; // getMonth() is zero-based
+    var dd = this.getDate();
+    var hh = this.getHours();
+    var MM = this.getMinutes();
+    var ss = this.getSeconds();
+
+    return [this.getFullYear(),
+        (mm>9 ? '' : '0') + mm,
+        (dd>9 ? '' : '0') + dd,
+        (hh>9 ? '' : '0') + hh,
+        (MM>9 ? '' : '0') + MM,
+        (ss>9 ? '' : '0') + ss
+    ].join('-');
+    };
+
+</script>
+
+<html>
+    <body>
+        <form action="" method="POST" onsubmit="return validateContact(this);">
+            <!-- enter number to call -->
+            <p>Number : <input type="text" name="number" id="call_number"/></p>
+
+            <!-- hidden attribute to save the start_time and end_time -->
+            <p hidden><input type="text" id="start" name="start" /><input type="text" id="end" name="end" /></p>
+
+            <!-- press submit to submit the call data for creating entries -->
+            <button type="submit">submit</button><br><br>
+        </form>
+            <!-- press the start button to start call, press end button to end call -->
+            <button onclick="start_call();">start</button> <button onclick="end_call();">end</button>
+            <p><button onclick="history.back()">back</button></p>
+    </body>
+</html>
+{% endblock %}

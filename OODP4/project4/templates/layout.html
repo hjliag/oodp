@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head> <!-- used bootstrap template for better design -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/static/js/search_engine.js"></script>
+  <script type="text/javascript" src="/static/js/input_validation.js"></script>
+
+  <title>{% block title %}{% endblock %} - project4</title>
+
+</head>
+<body>
+  <div class="frame">
+    <div class="menu-bar">
+      <ul class="menu">
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/call">Call</a></li>
+        <li><a href="/sms">SMS</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      {% block body %}
+
+      {% endblock %}
+    </div>
+  </div>
+</body>
+
+
+</html>

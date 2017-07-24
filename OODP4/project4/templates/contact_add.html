@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}add contact{% endblock %}
+
+{% block body %}
+<html>
+    <body>
+        <form action="" method="POST" onsubmit="return validateContact(this);">
+
+            <!-- input fields -->
+            <p>Name : <input type="text" name="name" /></p>
+            <p>Number : <input type="text" name="number" /></p>
+            <p>Address : <input type="text" name="address" /></p>
+            <p>E-mail : <input type="text" name="email" /></p>
+            <p>Memo : <input type="text" name="memo" /></p>
+
+            <!-- submit button -->
+            <p><input type="submit" value="add" /></p>
+        </form>
+            <p><button onclick="history.back()">back</button></p>
+    </body>
+</html>
+{% endblock %}

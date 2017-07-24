@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block title %}call main{% endblock %}
+{% block body %}
+
+	<h2>Calls</h2>
+
+	<button onclick="location.href='/call/add'">Call</button>
+
+	<!-- Search engine -->
+    <div class="input-group">
+        <input type="text" id="search_call" class="form-control"/>
+        <span class="input-group-addon">
+            <i class="fa fa-search"></i>
+        </span>
+    </div>
+
+	<!-- list of call entries -->
+    <ul class="col-md-6 col-md-offset-3">
+	    {% for call in calls %}
+			<li class="call" data="{{call.number}}">
+				number : {{call.number}}<br>
+				called : {{call.called}}<br>
+				missed : {{call.missed}}<br>
+				start time : {{call.start_time}}<br>
+				end time : {{call.end_time}}<br>
+				<button onclick="location.href='/call/delete?id={{call.id}}'">Delete</button>
+			</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

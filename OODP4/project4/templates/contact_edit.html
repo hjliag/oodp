@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}edit contact{% endblock %}
+
+{% block body %}
+<html>
+    <body>
+        <form action="" method="POST" onsubmit="return validateContact(this);">
+
+            <!-- hidden attribute to save id value -->
+            <p hidden>Id : <input type="text" name="id" value="{{ edit_contact[0].id }}"/></p>
+
+            <!-- input fields -->
+            <p>Name : <input type="text" name="name" value="{{ edit_contact[0].name }}"/></p>
+            <p>Number : <input type="text" name="number" value='{{ edit_contact[0].number }}' /></p>
+            <p>Address : <input type="text" name="address" value='{{ edit_contact[0].address }}' /></p>
+            <p>E-mail : <input type="text" name="email" value='{{ edit_contact[0].email }}' /></p>
+            <p>Memo : <input type="text" name="memo" value='{{ edit_contact[0].memo }}' /></p>
+
+            <!-- save button -->
+            <p><input type="submit" value="save" /></p>
+        </form>
+            <p><button onclick="history.back()">back</button></p>
+    </body>
+</html>
+{% endblock %}
